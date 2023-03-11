@@ -30,7 +30,7 @@ const Board = () => {
         min="1"
         max="9"
         className="square"
-        value={board[row][col] === 0 ? '' : board[row][col]}
+        value={board[row][col] === null ? '' : board[row][col]}
         onChange={(e) => handleChange(e, row, col)}
       />
     );
