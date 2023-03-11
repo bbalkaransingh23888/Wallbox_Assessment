@@ -31,6 +31,7 @@ class Sudoku extends React.Component {
     for (let row = 0; row < 9; row++) {
       for (let col = 0; col < 9; col++) {
         if (board[row][col] === 0) {
+          console.log("complete");
           return false;
         }
       }
@@ -44,16 +45,18 @@ class Sudoku extends React.Component {
 
   //   // Check rows for duplicates
     for (let row = 0; row < 9; row++) {
-      const rowValues = board[row].filter(val => val !== 0);
+      const rowValues = board[row].filter(val => val !== null);
       if (new Set(rowValues).size !== rowValues.length) {
+        console.log("row", row+1);
         errors.push(`Duplicate value(s) in row ${row + 1}`);
       }
     }
 
   //   // Check columns for duplicates
     for (let col = 0; col < 9; col++) {
-      const colValues = board.map(row => row[col]).filter(val => val !== 0);
+      const colValues = board.map(row => row[col]).filter(val => val !== null);
       if (new Set(colValues).size !== colValues.length) {
+        console.log("column", col+1)
         errors.push(`Duplicate value(s) in column ${col + 1}`);
       }
     }
@@ -66,10 +69,12 @@ class Sudoku extends React.Component {
         for (let j = col; j < col + 3; j++) {
           if (board[i][j] !== 0) {
             subgridValues.push(board[i][j]);
+            console.log("subgrid", subgridValues);
           }
         }
       }
       if (new Set(subgridValues).size !== subgridValues.length) {
+        console.log("log something here");
         errors.push(`Duplicate value(s) in subgrid starting at row ${row + 1} and column ${col + 1}`);
       }
     }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Board from './components/Board';
 import Sudoku from './components/Sudoku';
 
-const initialBoard = [  
+var initialBoard = [  
   [5, 3, null, null, 7, null, null, null, null], 
   [6, null, null, 1, 9, 5, null, null, null],
   [null, 9, 8, null, null, null, null, 6, null],
