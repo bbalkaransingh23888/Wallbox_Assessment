@@ -51,7 +51,7 @@ class Sudoku extends React.Component {
         errors.push(`Duplicate value(s) in row ${row + 1}`);
       }
     }
-
+//hello
   //   // Check columns for duplicates
     for (let col = 0; col < 9; col++) {
       const colValues = board.map(row => row[col]).filter(val => val !== null);
